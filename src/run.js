@@ -1,5 +1,5 @@
 const {app}= require('./server')
-const {db}= require('../models/db')
+const {db}= require('./models/db')
 const log =require('debug')('app:run')
 
 async function run() {

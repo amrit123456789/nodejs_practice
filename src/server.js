@@ -3,10 +3,10 @@ const path = require('path')
 const hbs = require('express-hbs')
 const session = require('express-session')
 
-//const passport = require('./auth/passport')
+const passport = require('./auth/passport')
 
 const app = express()
-/*
+
 app.engine('hbs', hbs.express4({
   partialsDir: path.join(__dirname, '../views/partials'),
   layoutsDir: path.join(__dirname, '../views/layouts'),
@@ -25,11 +25,13 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use('/', express.static(path.join(__dirname, '../public')))
+
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.use('/', require('./routes/pages'))
-app.use('/api', require('./routes/api'))*/
+app.use('/api', require('./routes/api'))
 
 module.exports = {
   app

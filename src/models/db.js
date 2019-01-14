@@ -6,7 +6,7 @@ const db = new Sequelize(
   {
     dialect: 'mysql',
     host: 'localhost',
-    logging: false
+    //logging: false
   }
 )
 
@@ -14,7 +14,7 @@ const User = db.define('user', {
   username: { type: DT.STRING(30), unique: true, allowNull: false },
   password: { type: DT.STRING, allowNull: true }
 })
-
+console.log("hi")
 const Article = db.define('article', {
   title: {
     type: DT.STRING(150),
@@ -43,6 +43,10 @@ Article.hasMany(Comment)
 
 Comment.belongsTo(User)
 User.hasMany(Comment)
+
+db.sync()
+    .then(() => console.log("Database has been synced"))
+    .catch((err) => console.error("Error creating database"))
 
 module.exports = {
   db,
