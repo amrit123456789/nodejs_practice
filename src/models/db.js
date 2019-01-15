@@ -14,7 +14,7 @@ const User = db.define('user', {
   username: { type: DT.STRING(30), unique: true, allowNull: false },
   password: { type: DT.STRING, allowNull: true }
 })
-console.log("hi")
+
 const Article = db.define('article', {
   title: {
     type: DT.STRING(150),
